@@ -1,0 +1,572 @@
+<html>
+<head>
+<title>RadioBlast | Blended as STANers</title>
+<!-- ganti icon -->
+<link rel="shortcut icon" href="./img/favicon.ico">
+<link rel="stylesheet" href="./files/bootstrap.min.css">
+<link rel="stylesheet" href="./files/jquery.bxslider.css">
+<link rel="stylesheet" href="./files/fonts.css">
+<link rel="stylesheet" href="./files/lightbox.min.css">
+<link rel="stylesheet" href="./files/simplebar.min.css">
+<link rel="stylesheet" href="./files/jssocials.min.css">
+<link rel="stylesheet" href="./files/jssocials-theme-minima.min.css">
+<link rel="stylesheet" href="./files/font-awesome.min.css">
+</head>
+<style>
+ * {
+     margin: 0;
+     padding: 0;
+     -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+     -ms-box-sizing: border-box;
+     box-sizing: border-box;
+ }
+.bg-wrapper {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+p {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.7em;
+    color: #666;
+    background: transparent !important;
+}
+a, a:hover, a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+    outline: none;
+    cursor: pointer;
+}
+.hide {
+    display: none;
+}
+.navbar {
+    padding: 15px 10px;
+    background: #fff;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+.line {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 40px 0;
+}
+button, .btn {
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.75;
+    letter-spacing: 1px;
+    padding: .375rem 1.5rem;
+}
+button:disabled, .btn:disabled {
+    cursor: default;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #0070ba;
+    border-color: #0070ba;
+    border-radius: 0;
+}
+.btn-primary:hover {
+    background-color: #0a559f;
+}
+.btn-outline-primary {
+    color: #0070ba;
+    border-radius: 0;
+    background-color: transparent;
+    background-image: none;
+    border-color: #B2D4EA;
+}
+.btn-outline-primary:hover {
+    background-color: transparent;
+    color: #0070ba;
+    border-color: #0070ba;
+}
+.btn-outline-primary.focus, .btn-outline-primary:focus,
+.btn-outline-primary.focus, .btn-outline-primary:active {
+    box-shadow: unset !important;
+    background-color: transparent !important;
+    color: #0070ba !important;
+    border-color: #0070ba !important;
+}
+#sidebar {
+    width: 250px;
+    position: fixed;
+    color: #272727;
+    height: 100%;
+    z-index: 9;
+    overflow-x: hidden;
+}
+
+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 967;
+    display: none;
+    top: 0;
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+}
+#sidebar .sub-brand {
+    font-family: Mada;
+	font-size: 14px;
+	font-weight: bold;
+	letter-spacing: 0.4px;
+	color: #022d5f;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+#sidebar ul.menus {
+    padding: 20px 0;
+    margin: 20px 0;
+    height: auto;
+    overflow-y: auto;
+}
+
+#sidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+#sidebar ul li a i.icon-home {
+    background: url(../images/menus/home/off.svg) no-repeat;
+    background-size: 15px;
+    background-position-y: center;
+}
+#sidebar ul.components li a {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+	font-size: 14px;
+	line-height: 1.5;
+	letter-spacing: 1px;
+	color: #000000;
+    text-transform: uppercase;
+    display: block;
+    padding: 12px 20px;
+    /*! height: 21px; */
+}
+
+#sidebar ul.menus li a:before {
+    display: inline-block;
+    float: left;
+    content: ' ';
+    margin-right: 15px;
+    height: 21px;
+    width: 20px;
+}
+#sidebar ul li a.home:before {
+    background: url(../images/menus/home/off.svg) no-repeat center left;
+    background-size: 17px;
+}
+#sidebar ul li a.about:before {
+    background: url(../images/menus/about/off.svg) no-repeat center left;
+    background-size: 18px;
+}
+#sidebar ul li a.live:before {
+    background: url(../images/menus/live/off.svg) no-repeat center left;
+    background-size: 16px;
+}
+#sidebar ul li a.career:before {
+    background: url(../images/menus/career/off.svg) no-repeat center left;
+    background-size: 20px;
+}
+#sidebar ul li a.schedule:before {
+    background: url(../images/menus/schedule/off.svg) no-repeat center left;
+    background-size: 19px;
+}
+#sidebar ul li a.contact:before {
+    background: url(../images/menus/contact/off.svg) no-repeat center left;
+    background-size: 20px;
+}
+#sidebar ul li a.info:before {
+    background: url(../images/menus/info/off.svg) no-repeat center left;
+    background-size: 20px;
+}
+
+#sidebar ul li a:hover {
+    color: #ff0000;
+}
+#sidebar ul li a:hover.home:before,
+#sidebar ul li.active a.home:before {
+    background: url(../images/menus/home/active.svg) no-repeat center left;
+    background-size: 17px;
+}
+#sidebar ul li a:hover.about:before,
+#sidebar ul li.active a.about:before {
+    background: url(../images/menus/about/active.svg) no-repeat center left;
+    background-size: 18px;
+}
+#sidebar ul li a:hover.live:before,
+#sidebar ul li.active a.live:before {
+    background: url(../images/menus/live/active.svg) no-repeat center left;
+    background-size: 16px;
+}
+#sidebar ul li a:hover.career:before,
+#sidebar ul li.active a.career:before {
+    background: url(../images/menus/career/active.svg) no-repeat center left;
+    background-size: 20px;
+}
+#sidebar ul li a:hover.schedule:before,
+#sidebar ul li.active a.schedule:before {
+    background: url(../images/menus/schedule/active.svg) no-repeat center left;
+    background-size: 19px;
+}
+#sidebar ul li a:hover.contact:before,
+#sidebar ul li.active a.contact:before {
+    background: url(../images/menus/contact/active.svg) no-repeat center left;
+    background-size: 20px;
+}
+#sidebar ul li a:hover.info:before,
+#sidebar ul li.active a.info:before {
+    background: url(../images/menus/info/active.svg) no-repeat center left;
+    background-size: 20px;
+}
+#sidebar ul li.active > a, a[aria-expanded="true"] {
+    color: #ff0000;
+}
+@keyframes up-right {
+    0% {<!--from w w w .  j  a va 2  s. c  o m-->
+        transform: scale(1);
+        opacity: .25
+    }
+    50% {
+        transform: scale (1, 5);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: .25;
+    }
+}
+.circle {
+    border-radius: 50%;
+    width: 6px;
+    height: 6px;
+    opacity: .25;
+}
+.red {
+    background-color: #e6007e;
+    position: relative;
+    top: -8px;
+    left: 5px;
+}
+.text-red {
+    color: #e6007e;
+    margin-left: 4px;
+}
+.red, .text-red {
+    display: inline-block;
+    -webkit-animation: up-right 1s infinite;
+    -moz-animation: up-right 1s infinite;
+    -o-animation: up-right 1s infinite;
+    animation: up-right 1s infinite;
+}
+.dismiss {
+    display: none;
+}
+.accordion-toggle:after {
+    float: right;
+    border-style: solid;
+	border-width: 2px 2px 0 0;
+	border-color: #0070ba;
+	content: '';
+	position: relative;
+	top: 6px;
+	height: 12px;
+	width: 12px;
+	vertical-align: top;
+	padding: 0;
+}
+.accordion-toggle[aria-expanded="false"]:after {
+	transform: rotate(45deg);
+    transition: all .5s;
+}
+.accordion-toggle[aria-expanded="true"]:after {
+	transform: rotate(135deg);
+    transition: all .5s;
+}
+a[data-toggle="collapse"] {
+    position: relative;
+}
+.card {
+    border-radius: 1px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+}
+.card .card-img-top {
+    border-top-left-radius: 1px;
+    border-top-right-radius: 1px;
+}
+.card .card-body {
+    padding: 16px;
+}
+.card-img-top {
+    position: relative;
+    overflow: hidden;
+}
+.card-effect small {
+    position: absolute;
+    bottom: 10px;
+    left: 16px;
+    width: 100%;
+    color: #ffffff;
+}
+.card-effect,
+.card-effect img {
+    -webkit-transition: all .3s ease-in;
+    transition: all .3s ease-in;
+}
+.card-effect:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15);
+}
+.card-effect:hover img {
+    -webkit-transform: scale3d(1.2, 1.2, 1);
+    transform: scale3d(1.04, 1.04, 1);
+}
+.card-effect h4 {
+    margin-bottom: 0;
+}
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #6d7fcc;
+}
+
+/*
+Modified : 19-02-2018
+By : Eri Junianto
+*/
+ul.CTAs {
+    padding: 20px;
+    bottom: 0;
+    width: 100%;
+    margin: 0;
+}
+
+ul.CTAs a {
+    text-align: center;
+    font-size: 14px !important;
+    display: block;
+}
+ul.CTAs a.btn-regist {
+    font-weight: 600;
+	line-height: 1.5;
+	letter-spacing: 1px;
+	text-align: center;
+    padding: 15px 20px;
+    margin-bottom: 50px;
+	color: #0070ba;
+    border: solid 1px rgba(0, 112, 186, 0.3);
+}
+ul.CTAs a.icon {
+    width: 48px;
+    height: 48px;
+    display: inline-block;
+    box-shadow: 0 3.5px 4px 0 rgba(0, 0, 0, 0.06);
+    border-radius: 50%;
+    margin-right: 16px;
+}
+ul.CTAs a.icon:last-child {
+    margin-right: 0;
+}
+ul.CTAs a.icon:hover {
+    box-shadow: 0px 6.5px 6px 0 rgba(0, 0, 0, 0.1);
+}
+ul.CTAs a.social-facebook {
+    background: url(../images/social/facebook.png) no-repeat center;
+    background-size: 10px;
+}
+ul.CTAs a.social-instagram {
+    background: url(../images/social/instagram.png) no-repeat center;
+    background-size: 20px;
+}
+ul.CTAs a.social-twitter {
+    background: url(../images/social/twitter.png) no-repeat center;
+    background-size: 20px;
+}
+ul.CTAs .copy {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.5;
+	letter-spacing: 0.3px;
+	text-align: left;
+	color: #848484;
+    margin-top: 10px;
+}
+a.download {
+    background: #fff;
+    color: #7386D5;
+}
+a.article, a.article:hover {
+    background: #6d7fcc !important;
+    color: #fff !important;
+}
+.navigation {
+    width: 250px;
+}
+/* reset our lists to remove bullet points and padding */
+.mainmenu, .submenu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+/* make ALL links (main and submenu) have padding and background color */
+.mainmenu a {
+    display: block;
+    text-decoration: none;
+    padding: 10px;
+    color: #000;
+}
+/* add hover behaviour */
+.mainmenu a:hover {
+    background-color: #e5ecf6;
+}
+/* when hovering over a .mainmenu item,
+  display the submenu inside it.
+  we're changing the submenu's max-height from 0 to 200px;
+*/
+.mainmenu li:hover .submenu {
+    display: block;
+    max-height: 200px;
+}
+/*
+  we now overwrite the background-color for .submenu links only.
+  CSS reads down the page, so code at the bottom will overwrite the code at the top.
+*/
+.submenu a {
+    background-color: #f2f5fa;
+}
+/* hover behaviour for links inside .submenu */
+.submenu a:hover {
+    background-color: #e5ecf6;
+}
+/* this is the initial state of all submenus.
+  we set it to max-height: 0, and hide the overflowed content.
+*/
+.submenu {
+    overflow: hidden;
+    max-height: 0;
+    -webkit-transition: all 0.5s ease-out;
+}
+.simplebar-scrollbar {
+    background: #aaa;
+}
+#sidebar .sub-brand {
+    font-family: Mada;
+	font-size: 14px;
+	font-weight: bold;
+	letter-spacing: 0.4px;
+	color: #022d5f;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+</style>
+<body>
+<div class="bg-wrapper dekstop" style="background: no-repeat center; background-size:cover;"></div>
+	<div class="wrapper">
+  <!-- Sidebar Holder -->
+            <nav id="sidebar" data-simplebar="init">
+			<div class="simplebar-track vertical" style="visibility: visible;">
+			<div class="simplebar-scrollbar" style="top: 2px; height: 594px;"></div></div>
+			<div class="simplebar-track horizontal" style="visibility: hidden;">
+			<div class="simplebar-scrollbar"></div></div>
+			<div class="simplebar-scroll-content" style="padding-right: 17px; margin-bottom: -34px; overflow: hidden;">
+			<div class="simplebar-content" style="padding-bottom: 17px; margin-right: -17px;overflow: hidden;">
+			
+    <div class="dismiss"></div>
+
+    <div class="sidebar-header">
+        <div class="brand"><a href="./index.html"><img src="./img/RADIO.jpg" height="80px"></a></div>
+    </div>
+
+    <!--
+    Modified : 20-02-2018
+    By : Eri Junianto
+    -->    
+    <nav class="navigation">
+        <ul class="mainmenu list-unstyled components menus">
+            <li class="active">
+                <a class="home tip-right" data-toggle="tooltip" data-original-title="Homepage" href="https://www.trans7.co.id/">HOME</a>
+            </li>
+            <li>
+                <a class="about" href="https://www.trans7.co.id/info#">ABOUT US <i style="float: right" class="fa fa-angle-down"></i></a>
+                <ul class="submenu">
+                    <li><a class="tip-right" data-toggle="tooltip" data-original-title="Company Profile" href="https://www.trans7.co.id/about#profile">Profile</a></li>
+                    <li><a class="tip-right" data-toggle="tooltip" data-original-title="Awardness" href="https://www.trans7.co.id/about#award">Awards</a></li>
+                    <li><a class="tip-right" data-toggle="tooltip" data-original-title="Board of Director" href="https://www.trans7.co.id/about#bod">Board of Director</a></li>
+                </ul>
+            </li>
+            <li>
+                <a class="live tip-right blink" data-toggle="tooltip" data-original-title="Live Streaming" href="https://www.trans7.co.id/live-streaming"><div class="live" style="float: left">LIVE STREAMING</div>
+                    <div class="circle red"></div>
+                </a>
+            </li>
+            <li>
+                <a class="career tip-right" data-toggle="tooltip" data-original-title="Career" href="http://career.trans7.co.id/" target="_blank">CAREER</a>
+            </li>
+            <li>
+                <a class="schedule tip-right" data-toggle="tooltip" data-original-title="Schedule" href="https://www.trans7.co.id/schedule">SCHEDULE</a>
+            </li>
+            <li>
+                <a class="contact tip-right" data-toggle="tooltip" data-original-title="Contact" href="https://www.trans7.co.id/contact">CONTACT</a>
+            </li>
+            <li>
+                <a class="info" href="https://www.trans7.co.id/info#">INFO <i style="float: right" class="fa fa-angle-down"></i></a>
+                <ul class="submenu">
+                    <li><a class="tip-right" data-toggle="tooltip" data-original-title="Magang / Praktek" href="https://www.trans7.co.id/info#intern">Magang / Praktek</a></li>
+                    <li><a class="tip-right" data-toggle="tooltip" data-original-title="Kunjungan Industri" href="https://www.trans7.co.id/info#tour">Kunjungan Industri</a></li>
+                    <li><a class="tip-right" data-toggle="tooltip" data-original-title="Nonton Program" href="https://www.trans7.co.id/info#watch">Nonton Program</a></li>
+                    <li><a class="tip-right" data-toggle="tooltip" data-original-title="Lokasi Studio" href="https://www.trans7.co.id/info#studio">Lokasi Studio</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <!-- End -->
+
+    <ul class="list-unstyled CTAs">
+        <!--
+        Modified : 31-01-2018
+        By : Eri Junianto
+        -->
+                   
+                <!-- End -->
+
+        <!--
+        Modified : 21-02-2018
+        By : Eri Junianto
+        -->
+        <li style="margin-top: 35px">
+            <a class="icon social-facebook tip-top" data-toggle="tooltip" data-original-title="Official TRANS7" href="https://www.facebook.com/OfficialTRANS7/" target="_blank"></a>
+            <a class="icon social-instagram tip-top" data-toggle="tooltip" data-original-title="@officialtrans7" href="https://www.instagram.com/officialtrans7/?hl=en" target="_blank"></a>
+            <a class="icon social-twitter tip-top" data-toggle="tooltip" data-original-title="@TRANS7" href="https://twitter.com/trans7?lang=en" target="_blank"></a>
+        </li>
+        <!-- End -->
+
+        <li class="copy">© 2018 Web and Design RadioBlast.</li>
+    </ul>
+</div></div></nav>
+     
+        </ul>
+    </nav>
+</div>
+</body>
+</html>
