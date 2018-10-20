@@ -3,7 +3,7 @@
 
     "short_name": "RadioBlast",
     "start_url": "index.html",
-    "scope": "./"
+    "scope": "./",
    
     "icons": [
         {
