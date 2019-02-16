@@ -1,5 +1,3 @@
-A Pen created at CodePen.io. You can find this one at https://codepen.io/hans/pen/HlrBE.
+A Pen created at CodePen.io. You can find this one at https://codepen.io/zakka258/pen/JxeNJv.
 
- Uses one time loading gifs, swaps them in and out for the neat transition. 
-
-Adaptation of this Dribble Shot: http://dribbble.com/shots/1353765-Audio-Player?list=show
+ 
