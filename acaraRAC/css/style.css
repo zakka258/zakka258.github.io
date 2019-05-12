@@ -1,0 +1,9 @@
+body {
+	background-color: #ddd;
+}
+
+.container {
+	margin: 75px auto;
+	max-width: 500px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
